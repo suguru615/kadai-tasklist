@@ -65,8 +65,8 @@ public class Message {
         return created_at;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreated_at(Timestamp currentTime) {
+        this.created_at = currentTime;
     }
 
     public Timestamp getUpdated_at() {
