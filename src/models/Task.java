@@ -14,12 +14,12 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
     @NamedQuery(
-            name = "getAllMessages",
-            query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
+            name = "getAllTask",
+            query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
             )
 })
-@Table(name = "messages")
-public class Message {
+@Table(name = "Task")
+public class Task {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +36,7 @@ public class Message {
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
+
 
     public Integer getId() {
         return id;
@@ -68,7 +69,6 @@ public class Message {
     public void setCreated_at(Timestamp currentTime) {
         this.created_at = currentTime;
     }
-
     public Timestamp getUpdated_at() {
         return updated_at;
     }
@@ -76,4 +76,6 @@ public class Message {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
+
+
 }
